@@ -8,9 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let people = ["Ivan", "Jane", "Mark", "Sofi"]
+    
     var body: some View {
-        Text("Hello, world!")
+        Text("Swift Tips: Enumerated")
             .padding()
+            .onAppear() {
+                withIndices()
+                withEnumerated()
+            }
+    }
+    
+    private func withIndices() {
+        for i in people.indices {
+            let person = people[i]
+            
+            print("At index \(i) -> \(person)")
+        }
+    }
+    
+    private func withEnumerated() {
+        for (i, person) in people.enumerated() {
+            print("At index \(i) -> \(person)")
+        }
     }
 }
 
